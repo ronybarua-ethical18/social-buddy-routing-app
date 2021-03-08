@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import Post from '../Post/Post';
 
@@ -10,12 +11,12 @@ const Home = () => {
         .then(data => setPosts(data))
     }, [])
     return (
-        <div>
-            <h3>I have got {posts.length} posts</h3>
+        <>
+            <Typography variant="h3" align="center" gutterBottom>User Posts</Typography>
             {
                 posts.map(post => <Post post={post}></Post>)
             }
-        </div>
+        </>
     );
 };
 
